@@ -7,15 +7,29 @@ import userRoute from './routes/userRoute';
 import productRoute from './routes/productRoute';
 import orderRoute from './routes/orderRoute';
 import uploadRoute from './routes/uploadRoute';
-
+import Product from './models/productModel';
 const mongodbUrl = config.MONGODB_URL;
 mongoose
   .connect(mongodbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
+  }).then(()=>{
+    const product = new Product({
+      name:"wgvrsv",
+      price: 45,
+      image: "jufyny",
+      brand:" req.body.brand",
+      category:" req.body.category",
+      countInStock: 5,
+      description: "req.body.description",
+      rating: 5,
+      numReviews: 5,
+      reviews:[]
+    });
+    const newProduct = product.save();
   })
-  .catch((error) => console.log(error.reason));
+  .catch((error) => console.log(error));
 
 const app = express();
 const port=8080;
