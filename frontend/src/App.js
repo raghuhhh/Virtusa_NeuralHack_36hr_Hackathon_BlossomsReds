@@ -19,9 +19,6 @@ function App() {
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
 
-  const openMenu = () => {
-    document.querySelector('.sidebar').classList.add('open');
-  };
   const closeMenu = () => {
     document.querySelector('.sidebar').classList.remove('open');
   };
@@ -30,8 +27,8 @@ function App() {
       <div className="grid-container">
         <header className="header">
           <div className="brand">
-            <button onClick={openMenu}>&#9776;</button>
-            <Link to="/">amazona</Link>
+            <button>&#9776;</button>
+            <Link to="/">Blossoms Red</Link>
           </div>
           <div className="header-links">
             <a href="cart.html">Cart</a>
@@ -80,7 +77,7 @@ function App() {
             <Route path="/signin" component={SigninScreen} />
             <Route path="/register" component={RegisterScreen} />
             <Route path="/product/:id" component={ProductScreen} />
-            <Route path="/cart/:id?" component={CartScreen} />
+            <Route path="/cart/:id" component={CartScreen} />
             <Route path="/category/:id" component={HomeScreen} />
             <Route path="/" exact={true} component={HomeScreen} />
           </div>

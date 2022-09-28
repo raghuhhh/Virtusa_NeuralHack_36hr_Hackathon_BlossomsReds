@@ -3,6 +3,7 @@ import Cookie from "js-cookie";
 import { CART_ADD_ITEM, CART_REMOVE_ITEM, CART_SAVE_SHIPPING, CART_SAVE_PAYMENT } from "../constants/cartConstants";
 
 const addToCart = (productId, qty) => async (dispatch, getState) => {
+  console.log(productId+"  "+qty)
   try {
     const { data } = await Axios.get("/api/products/" + productId);
     dispatch({
@@ -19,7 +20,7 @@ const addToCart = (productId, qty) => async (dispatch, getState) => {
     Cookie.set("cartItems", JSON.stringify(cartItems));
 
   } catch (error) {
-
+    console.log(error)
   }
 }
 const removeFromCart = (productId) => (dispatch, getState) => {

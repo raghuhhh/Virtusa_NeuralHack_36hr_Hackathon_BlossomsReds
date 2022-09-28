@@ -14,20 +14,6 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
-  }).then(()=>{
-    const product = new Product({
-      name:"wgvrsv",
-      price: 45,
-      image: "jufyny",
-      brand:" req.body.brand",
-      category:" req.body.category",
-      countInStock: 5,
-      description: "req.body.description",
-      rating: 5,
-      numReviews: 5,
-      reviews:[]
-    });
-    const newProduct = product.save();
   })
   .catch((error) => console.log(error));
 
@@ -50,5 +36,5 @@ app.get('*', (req, res) => {
 });
 
 app.listen(config.PORT, () => {
-   console.log('Server started at http://localhost:5000');
+   console.log('Server started at http://localhost:8080');
  });

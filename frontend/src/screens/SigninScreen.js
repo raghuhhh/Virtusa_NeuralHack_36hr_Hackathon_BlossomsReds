@@ -51,10 +51,10 @@ function SigninScreen(props) {
           <button type="submit" className="button primary">Signin</button>
         </li>
         <li>
-          New to amazona?
+          New to BlossomsRed?
         </li>
         <li>
-          <Link to={redirect === "/" ? "register" : "register?redirect=" + redirect} className="button secondary text-center" >Create your amazona account</Link>
+          <Link to={redirect === "/" ? "register" : "register?redirect=" + redirect} className="button secondary text-center" >Create your BlossomRed account</Link>
         </li>
       </ul>
     </form>
